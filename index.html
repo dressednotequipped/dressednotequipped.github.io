@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dressed, Not Equipped — A Gazette by Craig Kinnell</title>
+<meta name="description" content="A field guide for the over-50 city gentleman, against the tyranny of technical outerwear in cafés. Written from Coburg, Germany." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f4ede0;
+    --paper-deep: #ebe1cf;
+    --ink: #1a1612;
+    --ink-soft: #3a342c;
+    --rule: #2a241d;
+    --oxblood: #6b1e23;
+    --serif: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+    --display: 'Playfair Display', 'Bodoni 72', 'Didot', serif;
+    --mono: 'DM Mono', 'Courier New', monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper);
+    background-image:
+      radial-gradient(circle at 15% 20%, rgba(106, 78, 40, 0.04) 0%, transparent 40%),
+      radial-gradient(circle at 85% 70%, rgba(107, 30, 35, 0.03) 0%, transparent 50%);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 19px;
+    line-height: 1.55;
+    overflow-x: hidden;
+    position: relative;
+  }
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.08 0 0 0 0 0.05 0 0 0 0.18 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.5;
+    mix-blend-mode: multiply;
+  }
+  .container { max-width: 1180px; margin: 0 auto; padding: 0 32px; position: relative; z-index: 2; }
+  .masthead {
+    border-bottom: 1px solid var(--rule);
+    padding: 18px 0 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--ink-soft);
+  }
+  .masthead .left, .masthead .right { display: flex; gap: 22px; }
+  .hero { padding: 48px 0 32px; border-bottom: 4px double var(--rule); text-align: center; }
+  .hero .kicker {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.4em;
+    text-transform: uppercase; color: var(--oxblood); margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-family: var(--display); font-weight: 900;
+    font-size: clamp(48px, 9vw, 124px);
+    line-height: 0.92; letter-spacing: -0.02em;
+  }
+  .hero h1 .amp { font-style: italic; font-weight: 700; color: var(--oxblood); font-size: 0.9em; padding: 0 0.05em; }
+  .hero .deck {
+    font-family: var(--serif); font-style: italic;
+    font-size: clamp(18px, 2vw, 24px); color: var(--ink-soft);
+    max-width: 720px; margin: 16px auto 0; line-height: 1.4;
+  }
+  .hero .byline {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.35em;
+    text-transform: uppercase; color: var(--ink-soft); margin-top: 22px;
+  }
+  .hero .byline em {
+    font-family: var(--serif); font-style: italic; text-transform: none;
+    letter-spacing: 0; font-size: 16px; color: var(--oxblood);
+  }
+  .hero .ornament { margin: 20px auto 0; display: block; width: 80px; color: var(--oxblood); }
+  .strip {
+    border-bottom: 1px solid var(--rule); padding: 12px 0;
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.3em;
+    text-transform: uppercase; text-align: center; color: var(--ink-soft);
+  }
+  .strip span { margin: 0 14px; }
+  .strip .dot { color: var(--oxblood); }
+  .section-label {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.35em;
+    text-transform: uppercase; color: var(--oxblood);
+    border-top: 2px solid var(--oxblood); padding-top: 10px; display: block;
+  }
+  .section-label .num {
+    display: block; font-family: var(--display); font-style: italic;
+    font-size: 64px; color: var(--ink); letter-spacing: 0; margin-top: 6px; line-height: 1;
+  }
+  .manifesto { padding: 70px 0 60px; border-bottom: 1px solid var(--rule); }
+  .manifesto-grid { display: grid; grid-template-columns: 1fr 2.4fr; gap: 60px; align-items: start; }
+  .manifesto h2 {
+    font-family: var(--display); font-weight: 700;
+    font-size: clamp(32px, 4vw, 52px); line-height: 1.05;
+    letter-spacing: -0.01em; margin-bottom: 24px;
+  }
+  .manifesto h2 em { font-style: italic; color: var(--oxblood); }
+  .manifesto p { margin-bottom: 18px; max-width: 62ch; }
+  .manifesto p.lede { font-size: 22px; line-height: 1.45; }
+  .manifesto p.lede::first-letter {
+    font-family: var(--display); font-weight: 900; font-size: 78px;
+    float: left; line-height: 0.85; padding: 6px 10px 0 0; color: var(--oxblood);
+  }
+  .crimes { padding: 80px 0; border-bottom: 1px solid var(--rule); }
+  .crimes-header { text-align: center; margin-bottom: 60px; }
+  .crimes-header h2 {
+    font-family: var(--display); font-weight: 900; font-style: italic;
+    font-size: clamp(48px, 7vw, 92px); line-height: 1; letter-spacing: -0.02em;
+  }
+  .crimes-header .sub {
+    font-family: var(--serif); font-style: italic;
+    color: var(--ink-soft); font-size: 20px; margin-top: 12px;
+  }
+  .crimes-list {
+    display: grid; grid-template-columns: 1fr 1fr;
+    border-top: 1px solid var(--rule); border-left: 1px solid var(--rule);
+  }
+  .crime {
+    padding: 32px 28px;
+    border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+    transition: background 0.4s ease;
+  }
+  .crime:hover { background: var(--paper-deep); }
+  .crime .num {
+    font-family: var(--display); font-style: italic; font-weight: 700;
+    font-size: 38px; color: var(--oxblood); line-height: 1; margin-bottom: 8px;
+  }
+  .crime h3 {
+    font-family: var(--display); font-weight: 700;
+    font-size: 26px; line-height: 1.15; margin-bottom: 10px; letter-spacing: -0.005em;
+  }
+  .crime p { font-size: 17px; line-height: 1.5; color: var(--ink-soft); }
+  .crime .verdict {
+    display: inline-block; margin-top: 14px;
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.25em;
+    text-transform: uppercase; color: var(--oxblood);
+    border: 1px solid var(--oxblood); padding: 4px 9px;
+  }
+  .pullquote {
+    padding: 90px 0; text-align: center;
+    border-bottom: 1px solid var(--rule); background: var(--paper-deep);
+  }
+
+  /* ─── FIELD SPECIMENS ─────────────────────────────── */
+  .specimens { padding: 80px 0; border-bottom: 1px solid var(--rule); }
+  .specimens-header {
+    display: grid; grid-template-columns: 1fr 2.4fr;
+    gap: 60px; margin-bottom: 50px; align-items: end;
+  }
+  .specimens-header h2 {
+    font-family: var(--display); font-weight: 900;
+    font-size: clamp(40px, 6vw, 76px); line-height: 1; letter-spacing: -0.02em;
+    margin-bottom: 14px;
+  }
+  .specimens-header h2 em { font-style: italic; color: var(--oxblood); }
+  .specimens-header p {
+    font-style: italic; color: var(--ink-soft); max-width: 56ch;
+  }
+  .specimens-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px 24px;
+  }
+  .specimen { display: block; }
+  .specimen-frame {
+    position: relative; aspect-ratio: 4 / 5;
+    background: var(--paper-deep);
+    border: 1px solid var(--rule);
+    overflow: hidden;
+    transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.5s;
+  }
+  .specimen-frame::before {
+    content: '';
+    position: absolute; inset: 8px;
+    border: 1px dashed rgba(42, 36, 29, 0.3);
+    pointer-events: none;
+  }
+  .specimen-frame:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px -20px rgba(26, 22, 18, 0.4);
+  }
+  .specimen-placeholder {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center; padding: 28px;
+    background:
+      repeating-linear-gradient(
+        45deg,
+        transparent 0,
+        transparent 18px,
+        rgba(42, 36, 29, 0.04) 18px,
+        rgba(42, 36, 29, 0.04) 19px
+      );
+  }
+  .ph-label {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.35em;
+    text-transform: uppercase; color: var(--oxblood);
+    margin-bottom: 12px;
+  }
+  .ph-detail {
+    font-family: var(--display); font-style: italic; font-weight: 700;
+    font-size: 18px; line-height: 1.25; color: var(--ink-soft);
+  }
+  .specimen figcaption {
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--ink-soft); margin-top: 12px;
+  }
+  .specimen .caption-num {
+    font-family: var(--display); font-style: italic;
+    font-weight: 700; font-size: 16px; color: var(--oxblood);
+    text-transform: none; letter-spacing: 0; margin-right: 6px;
+  }
+  .specimens-note {
+    margin-top: 40px; text-align: center;
+    font-family: var(--serif); font-style: italic;
+    font-size: 16px; color: var(--ink-soft);
+  }
+  .specimens-note em { color: var(--oxblood); font-weight: 500; }
+
+  /* ─── DISCLOSURE BLOCK ────────────────────────────── */
+  .disclosure {
+    margin: 40px auto 0; max-width: 780px;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 22px 28px;
+    font-family: var(--serif); font-size: 15px;
+    line-height: 1.5; color: var(--ink-soft);
+    text-align: center;
+  }
+  .disclosure .tag {
+    display: inline-block; margin-bottom: 8px;
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.35em; text-transform: uppercase;
+    color: var(--oxblood);
+  }
+  .disclosure em { font-style: italic; color: var(--ink); }
+  .pullquote blockquote {
+    font-family: var(--display); font-style: italic; font-weight: 700;
+    font-size: clamp(28px, 4.5vw, 56px); line-height: 1.15;
+    max-width: 920px; margin: 0 auto; letter-spacing: -0.01em;
+  }
+  .pullquote blockquote::before {
+    content: '“'; font-size: 1.5em; color: var(--oxblood);
+    line-height: 0; vertical-align: -0.1em;
+  }
+  .pullquote blockquote::after { content: '”'; color: var(--oxblood); }
+  .pullquote cite {
+    display: block; margin-top: 28px;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.3em;
+    text-transform: uppercase; font-style: normal; color: var(--ink-soft);
+  }
+  .principles { padding: 80px 0; border-bottom: 1px solid var(--rule); }
+  .principles-header {
+    display: grid; grid-template-columns: 1fr 2.4fr;
+    gap: 60px; margin-bottom: 50px; align-items: end;
+  }
+  .principles-header h2 {
+    font-family: var(--display); font-weight: 900;
+    font-size: clamp(40px, 6vw, 76px); line-height: 1; letter-spacing: -0.02em;
+  }
+  .principles-header h2 em { font-style: italic; color: var(--oxblood); }
+  .principles-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 36px 60px; }
+  .principle { border-top: 1px solid var(--rule); padding-top: 18px; }
+  .principle .num {
+    font-family: var(--display); font-style: italic; font-weight: 700;
+    font-size: 28px; color: var(--oxblood); margin-bottom: 6px;
+  }
+  .principle h3 {
+    font-family: var(--display); font-weight: 700;
+    font-size: 24px; margin-bottom: 8px; line-height: 1.15;
+  }
+  .principle p { font-size: 17px; line-height: 1.5; color: var(--ink-soft); }
+  .remedies { padding: 80px 0 60px; border-bottom: 1px solid var(--rule); }
+  .remedies-header {
+    display: grid; grid-template-columns: 1fr 2.4fr;
+    gap: 60px; margin-bottom: 50px; align-items: end;
+  }
+  .remedies-header h2 {
+    font-family: var(--display); font-weight: 900;
+    font-size: clamp(40px, 6vw, 76px); line-height: 1; letter-spacing: -0.02em;
+  }
+  .remedies-header h2 em { font-style: italic; color: var(--oxblood); }
+  .remedies-header p { font-style: italic; color: var(--ink-soft); max-width: 56ch; }
+  .category { margin-bottom: 50px; }
+  .category-title {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.35em;
+    text-transform: uppercase; color: var(--ink);
+    border-bottom: 1px solid var(--rule); padding-bottom: 10px; margin-bottom: 22px;
+    display: flex; justify-content: space-between; align-items: baseline;
+  }
+  .category-title .index {
+    color: var(--oxblood); font-style: italic; font-family: var(--display);
+    text-transform: none; letter-spacing: 0; font-size: 22px;
+  }
+  .links { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+  .link {
+    display: block; padding: 18px 4px;
+    border-bottom: 1px solid rgba(42, 36, 29, 0.2);
+    text-decoration: none; color: var(--ink);
+    transition: padding-left 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), background 0.3s;
+    position: relative;
+  }
+  .link:hover {
+    padding-left: 16px;
+    background: linear-gradient(90deg, rgba(107,30,35,0.05), transparent 60%);
+  }
+  .link::before {
+    content: '→'; position: absolute; left: -12px; top: 28px;
+    color: var(--oxblood); opacity: 0;
+    transition: opacity 0.3s, left 0.3s; font-size: 18px;
+  }
+  .link:hover::before { opacity: 1; left: 0; }
+  .link .name {
+    font-family: var(--display); font-size: 22px; font-weight: 700;
+    line-height: 1.1; display: block; margin-bottom: 4px;
+  }
+  .link .note { font-family: var(--serif); font-style: italic; font-size: 15px; color: var(--ink-soft); }
+  .link .origin {
+    font-family: var(--mono); font-size: 9px; letter-spacing: 0.25em;
+    text-transform: uppercase; color: var(--oxblood);
+    margin-top: 6px; display: block;
+  }
+  .editors-note {
+    padding: 80px 0; border-bottom: 1px solid var(--rule);
+    background: var(--paper-deep);
+  }
+  .editors-note .container { max-width: 760px; }
+  .editors-note .label {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.35em;
+    text-transform: uppercase; color: var(--oxblood);
+    text-align: center; margin-bottom: 18px;
+  }
+  .editors-note h2 {
+    font-family: var(--display); font-weight: 700; font-style: italic;
+    font-size: clamp(32px, 4vw, 48px); line-height: 1.1;
+    text-align: center; margin-bottom: 36px; letter-spacing: -0.01em;
+  }
+  .editors-note p { margin-bottom: 18px; }
+  .editors-note .signature { margin-top: 36px; text-align: center; }
+  .editors-note .signature .name {
+    font-family: var(--display); font-style: italic; font-weight: 700;
+    font-size: 28px; color: var(--oxblood);
+  }
+  .editors-note .signature .role {
+    display: block; font-family: var(--mono);
+    font-size: 10px; letter-spacing: 0.3em;
+    text-transform: uppercase; color: var(--ink-soft); margin-top: 8px;
+  }
+  footer {
+    padding: 60px 0 40px; text-align: center;
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.3em;
+    text-transform: uppercase; color: var(--ink-soft);
+  }
+  footer .ornament {
+    color: var(--oxblood); font-size: 22px;
+    margin-bottom: 18px; letter-spacing: 0.4em;
+  }
+  footer p { margin-bottom: 8px; }
+  footer .small {
+    font-family: var(--serif); font-style: italic;
+    text-transform: none; letter-spacing: 0;
+    font-size: 14px; color: var(--ink-soft);
+    margin-top: 18px; line-height: 1.5;
+  }
+  @media (max-width: 760px) {
+    .container { padding: 0 22px; }
+    .masthead { font-size: 9px; flex-direction: column; gap: 6px; align-items: center; }
+    .masthead .left, .masthead .right { gap: 14px; }
+    .manifesto-grid, .remedies-header, .principles-header, .specimens-header { grid-template-columns: 1fr; gap: 30px; }
+    .crimes-list, .principles-grid { grid-template-columns: 1fr; }
+    .specimens-grid { grid-template-columns: 1fr 1fr; gap: 18px; }
+    .strip span { display: inline-block; margin: 2px 8px; }
+  }
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero, .manifesto, .crime, .specimens, .pullquote, .principles, .remedies, .editors-note {
+    animation: rise 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+  .crime:nth-child(1) { animation-delay: 0.05s; }
+  .crime:nth-child(2) { animation-delay: 0.10s; }
+  .crime:nth-child(3) { animation-delay: 0.15s; }
+  .crime:nth-child(4) { animation-delay: 0.20s; }
+  .crime:nth-child(5) { animation-delay: 0.25s; }
+  .crime:nth-child(6) { animation-delay: 0.30s; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <header class="masthead">
+    <div class="left">
+      <span>Vol. I — No. 1</span>
+      <span>Est. MMXXVI</span>
+      <span><a href="golf.html" style="color:var(--oxblood);text-decoration:none;border-bottom:1px solid currentColor;">No. 2 — The Golf Supplement →</a></span>
+    </div>
+    <div class="right">
+      <span>A Gazette of Civic Tailoring</span>
+      <span>Coburg · Germany</span>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="kicker">A Field Guide for the Modern Gentleman</div>
+    <h1>Dressed,<br><span class="amp">&amp;</span> Not Equipped</h1>
+    <p class="deck">For the man over fifty who has noticed that the café is not a fucking base camp, and that the city tram does not, in fact, require a 30-litre technical rucksack.</p>
+    <div class="byline">By <em>Craig Kinnell</em></div>
+    <svg class="ornament" viewBox="0 0 80 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 8 H30" stroke="currentColor" stroke-width="1"/>
+      <circle cx="40" cy="8" r="3" fill="currentColor"/>
+      <path d="M50 8 H80" stroke="currentColor" stroke-width="1"/>
+    </svg>
+  </section>
+</div>
+
+<div class="strip">
+  <span>No Goretex Indoors</span>
+  <span class="dot">◆</span>
+  <span>No Zip-Off Trousers</span>
+  <span class="dot">◆</span>
+  <span>No Trail Shoes To Dinner</span>
+  <span class="dot">◆</span>
+  <span>Stand Up Straight</span>
+</div>
+
+<div class="container">
+
+  <section class="manifesto">
+    <div class="manifesto-grid">
+      <div><span class="section-label">The Manifesto<span class="num">I.</span></span></div>
+      <div>
+        <h2>You are not climbing the <em>Watzmann.</em> You are getting a flat white.</h2>
+        <p class="lede">Somewhere between the fall of the Berlin Wall and the rise of the all-day fleece, the European man over fifty made a quiet, terrible bargain. He swapped his overcoat for a softshell. He swapped his shoes for footwear that bills itself as <em>technical</em>. He took to the cobblestones of Bamberg and Bruges in the apparel of a man preparing to bivouac.</p>
+        <p>This gazette is not a moral panic. It is an intervention, written in the spirit of friendship. We have nothing against mountains. We have nothing against Jack Wolfskin in its proper context, which is, broadly, a mountain. We do, however, have an objection to walking past a respectable trattoria and seeing a man in his mid-fifties dressed for a weather event that is not happening.</p>
+        <p>You are an adult. You have a job, or you had one. You have books. You have opinions about wine. The clothing should match the man.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="crimes">
+    <div class="crimes-header">
+      <span class="section-label" style="display:inline-block;text-align:left;">Part Two</span>
+      <h2>The <em>Six</em> Crimes</h2>
+      <p class="sub">An incomplete dossier of offences committed daily on the streets of Munich, Hamburg, and indeed Coburg.</p>
+    </div>
+
+    <div class="crimes-list">
+      <article class="crime">
+        <div class="num">№ 01</div>
+        <h3>The Commute Anorak</h3>
+        <p>A Goretex shell, fully sealed, hood up, on a 4°C morning in a tram carriage that is internally tropical. He arrives at the office sweating like a man who has just summited the Hörnli Ridge. He has, in fact, summited the U-Bahn.</p>
+        <span class="verdict">Verdict — Indefensible</span>
+      </article>
+      <article class="crime">
+        <div class="num">№ 02</div>
+        <h3>The Trail Runner At Dinner</h3>
+        <p>Salomon Speedcross, 4mm lugs caked in mud from no terrain in particular, paired with a clean shirt and chinos. The shoe is a brown-and-orange neon scream beneath an otherwise civilised man. The waiter looks down. The waiter understands.</p>
+        <span class="verdict">Verdict — Aggravated</span>
+      </article>
+      <article class="crime">
+        <div class="num">№ 03</div>
+        <h3>The Technical Rucksack</h3>
+        <p>32 litres. Hip belt. Hydration sleeve. Daisy-chain webbing for ice axe attachment. Inside: a paperback, a banana, and the keys to a Volvo. He is not crossing the Karwendel. He is collecting his daughter from ballet.</p>
+        <span class="verdict">Verdict — Egregious</span>
+      </article>
+      <article class="crime">
+        <div class="num">№ 04</div>
+        <h3>The Zip-Off Trouser</h3>
+        <p>A garment that is, optimistically, two garments. Both worse than one. The horizontal zip line sits across the thigh like a scar from an unsuccessful operation. He wears them to a wine bar. He has not, since 2003, removed the lower portion.</p>
+        <span class="verdict">Verdict — Capital</span>
+      </article>
+      <article class="crime">
+        <div class="num">№ 05</div>
+        <h3>The Fleece Gilet Over The Shirt</h3>
+        <p>The international uniform of the man who has confused a pension review with a hunting trip. The shoulders bunch. The pockets bulge with car keys and a Leatherman he has never used. He believes this looks <em>practical.</em> It looks like a pyjama waistcoat over a school uniform.</p>
+        <span class="verdict">Verdict — Pitiable</span>
+      </article>
+      <article class="crime">
+        <div class="num">№ 06</div>
+        <h3>The Convertible Watch Band</h3>
+        <p>A Garmin the size of a small saucepan, on a velcro strap, paired with a blazer at a wedding. He glances at it during the speeches. He is monitoring his resting heart rate. The bride notices. The bride is no longer thinking about the bride.</p>
+        <span class="verdict">Verdict — Sentenced</span>
+      </article>
+    </div>
+  </section>
+
+  <!-- ═══ FIELD SPECIMENS ═══ -->
+  <section class="specimens">
+    <div class="specimens-header">
+      <div><span class="section-label">Field Specimens<span class="num">II½.</span></span></div>
+      <div>
+        <h2>The <em>evidence,</em> photographed with discretion.</h2>
+        <p>A taxonomy of garment crimes, shot in detail. No faces, no identifying features — only the evidence. Photographed in the field. Filed without comment.</p>
+      </div>
+    </div>
+    <div class="specimens-grid">
+      <figure class="specimen">
+        <div class="specimen-frame">
+          <div class="specimen-placeholder">
+            <span class="ph-label">Specimen A</span>
+            <span class="ph-detail">The cleated sole, on a wine bar floor</span>
+          </div>
+        </div>
+        <figcaption><span class="caption-num">A.</span> Trail-shoe sole detail, cobblestone context.</figcaption>
+      </figure>
+      <figure class="specimen">
+        <div class="specimen-frame">
+          <div class="specimen-placeholder">
+            <span class="ph-label">Specimen B</span>
+            <span class="ph-detail">Daisy-chain webbing in a café queue</span>
+          </div>
+        </div>
+        <figcaption><span class="caption-num">B.</span> Technical rucksack, viewed from rear.</figcaption>
+      </figure>
+      <figure class="specimen">
+        <div class="specimen-frame">
+          <div class="specimen-placeholder">
+            <span class="ph-label">Specimen C</span>
+            <span class="ph-detail">The horizontal zip across the thigh</span>
+          </div>
+        </div>
+        <figcaption><span class="caption-num">C.</span> Zip-off trouser seam, mid-shin.</figcaption>
+      </figure>
+      <figure class="specimen">
+        <div class="specimen-frame">
+          <div class="specimen-placeholder">
+            <span class="ph-label">Specimen D</span>
+            <span class="ph-detail">Velcro &amp; matte plastic, beneath a cuff</span>
+          </div>
+        </div>
+        <figcaption><span class="caption-num">D.</span> Wrist-mounted GPS at a formal event.</figcaption>
+      </figure>
+      <figure class="specimen">
+        <div class="specimen-frame">
+          <div class="specimen-placeholder">
+            <span class="ph-label">Specimen E</span>
+            <span class="ph-detail">Bunched shoulders, bulging pockets</span>
+          </div>
+        </div>
+        <figcaption><span class="caption-num">E.</span> Fleece gilet, three-quarter rear.</figcaption>
+      </figure>
+      <figure class="specimen">
+        <div class="specimen-frame">
+          <div class="specimen-placeholder">
+            <span class="ph-label">Specimen F</span>
+            <span class="ph-detail">Hood up, indoors, in May</span>
+          </div>
+        </div>
+        <figcaption><span class="caption-num">F.</span> Goretex shell, tram interior.</figcaption>
+      </figure>
+    </div>
+    <p class="specimens-note">— Submissions accepted. Faces and identifying features are removed before publication. <em>Schicke nichts, was du nicht sehen willst.</em></p>
+  </section>
+
+</div>
+
+<section class="pullquote">
+  <div class="container">
+    <blockquote>If your shoes are designed for terrain you will never encounter, you have not bought shoes. You have bought a <em>fantasy.</em></blockquote>
+    <cite>— A Friend, Speaking Honestly</cite>
+  </div>
+</section>
+
+<div class="container">
+
+  <section class="principles">
+    <div class="principles-header">
+      <div><span class="section-label">The Principles<span class="num">III.</span></span></div>
+      <div><h2>Four <em>truths</em> before you spend a euro.</h2></div>
+    </div>
+    <div class="principles-grid">
+      <div class="principle">
+        <div class="num">i.</div>
+        <h3>Fit matters more than brand.</h3>
+        <p>A €40 shirt that fits beats a €400 one that does not. Tailored cuts. Not tight. Tight is for men who are still trying to prove something.</p>
+      </div>
+      <div class="principle">
+        <div class="num">ii.</div>
+        <h3>Buy fewer things, better.</h3>
+        <p>One pair of proper Goodyear-welted shoes will outlive three pairs of trainers and look better at dinner. The maths is on your side.</p>
+      </div>
+      <div class="principle">
+        <div class="num">iii.</div>
+        <h3>If it has a logo, ask why.</h3>
+        <p>A small woven label inside is craftsmanship. A large embroidered logo on the chest is paid advertising you have funded yourself.</p>
+      </div>
+      <div class="principle">
+        <div class="num">iv.</div>
+        <h3>The good brands sell through proper retailers.</h3>
+        <p>Italian houses controlling their distribution is a sign of quality, not inconvenience. Find Breuninger. Find Mr Porter. Find Farfetch.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="remedies">
+    <div class="remedies-header">
+      <div><span class="section-label">The Remedies<span class="num">IV.</span></span></div>
+      <div>
+        <h2>Where to <em>begin again.</em></h2>
+        <p>The brands I actually wear, or would wear, or have walked into a shop in Frankfurt to handle. Not exhaustive. Not sponsored. Edited from a working wardrobe.</p>
+      </div>
+    </div>
+
+    <div class="category">
+      <div class="category-title"><span>Plain T-Shirts (The Foundation)</span><span class="index">i.</span></div>
+      <div class="links">
+        <a class="link" href="https://www.uniqlo.com/de/de/" target="_blank" rel="noopener">
+          <span class="name">Uniqlo</span>
+          <span class="note">Airism &amp; Supima. Honest fit. The entry point.</span>
+          <span class="origin">Japan · €15–20</span>
+        </a>
+        <a class="link" href="https://www.sunspel.com/" target="_blank" rel="noopener">
+          <span class="name">Sunspel</span>
+          <span class="note">Made in England. Heavyweight. Ages beautifully.</span>
+          <span class="origin">United Kingdom · €80–100</span>
+        </a>
+        <a class="link" href="https://www.reiss.com/" target="_blank" rel="noopener">
+          <span class="name">Reiss</span>
+          <span class="note">British tailoring sensibility. A grown-up fit.</span>
+          <span class="origin">United Kingdom · €60–80</span>
+        </a>
+        <a class="link" href="https://www.cos.com/" target="_blank" rel="noopener">
+          <span class="name">COS</span>
+          <span class="note">Understated, well cut, quietly considered.</span>
+          <span class="origin">Sweden · €40–50</span>
+        </a>
+        <a class="link" href="https://www.trigema.de/" target="_blank" rel="noopener">
+          <span class="name">Trigema</span>
+          <span class="note">German-made. Solid. The honest local.</span>
+          <span class="origin">Germany · €30–40</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="category">
+      <div class="category-title"><span>Footwear (For Streets, Not Scree)</span><span class="index">ii.</span></div>
+      <div class="links">
+        <a class="link" href="https://www.crockettandjones.com/" target="_blank" rel="noopener">
+          <span class="name">Crockett &amp; Jones</span>
+          <span class="note">Northampton. Resoleable. A serious shoe.</span>
+          <span class="origin">United Kingdom</span>
+        </a>
+        <a class="link" href="https://www.edwardgreen.com/" target="_blank" rel="noopener">
+          <span class="name">Edward Green</span>
+          <span class="note">Bespoke-adjacent. Beautiful lasts. The summit.</span>
+          <span class="origin">United Kingdom</span>
+        </a>
+        <a class="link" href="https://www.carminashoemaker.com/" target="_blank" rel="noopener">
+          <span class="name">Carmina</span>
+          <span class="note">Mallorca. Goodyear welt. Reasonable, in context.</span>
+          <span class="origin">Spain</span>
+        </a>
+        <a class="link" href="https://aldenshop.com/" target="_blank" rel="noopener">
+          <span class="name">Alden</span>
+          <span class="note">Massachusetts. The shell cordovan religion.</span>
+          <span class="origin">United States</span>
+        </a>
+        <a class="link" href="https://www.loake.co.uk/" target="_blank" rel="noopener">
+          <span class="name">Loake</span>
+          <span class="note">British value. Underrated. Start here.</span>
+          <span class="origin">United Kingdom</span>
+        </a>
+        <a class="link" href="https://www.allenedmonds.com/" target="_blank" rel="noopener">
+          <span class="name">Allen Edmonds</span>
+          <span class="note">American craftsmanship. A rebuilding service.</span>
+          <span class="origin">United States</span>
+        </a>
+        <a class="link" href="https://www.grenson.com/" target="_blank" rel="noopener">
+          <span class="name">Grenson</span>
+          <span class="note">Goodyear welted. Quietly excellent leather.</span>
+          <span class="origin">United Kingdom</span>
+        </a>
+        <a class="link" href="https://www.beckettsimonon.com/" target="_blank" rel="noopener">
+          <span class="name">Beckett Simonon</span>
+          <span class="note">Direct-to-consumer. Honest construction.</span>
+          <span class="origin">Colombia · Direct</span>
+        </a>
+        <a class="link" href="https://www.meermin.com/" target="_blank" rel="noopener">
+          <span class="name">Meermin</span>
+          <span class="note">Spanish handcraft. Refined. Discreet.</span>
+          <span class="origin">Spain</span>
+        </a>
+        <a class="link" href="https://www.carlossantosshoes.com/" target="_blank" rel="noopener">
+          <span class="name">Carlos Santos</span>
+          <span class="note">Portuguese welt. Excellent leather. Underloved.</span>
+          <span class="origin">Portugal</span>
+        </a>
+        <a class="link" href="https://scarosso.com/" target="_blank" rel="noopener">
+          <span class="name">Scarosso</span>
+          <span class="note">Made-to-order Italian. Minimal markup.</span>
+          <span class="origin">Italy</span>
+        </a>
+        <a class="link" href="https://thursdayboots.com/" target="_blank" rel="noopener">
+          <span class="name">Thursday Boot Co.</span>
+          <span class="note">Modern sensibility. Honest price.</span>
+          <span class="origin">United States</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="category">
+      <div class="category-title"><span>Trousers &amp; Tailoring</span><span class="index">iii.</span></div>
+      <div class="links">
+        <a class="link" href="https://www.mrporter.com/en-de/mens/designer/incotex" target="_blank" rel="noopener">
+          <span class="name">Incotex</span>
+          <span class="note">Italian. Understated. Probably the best trouser made.</span>
+          <span class="origin">Italy · via Mr Porter, Breuninger</span>
+        </a>
+        <a class="link" href="https://www.mrporter.com/en-de/mens/designer/rota" target="_blank" rel="noopener">
+          <span class="name">Rota</span>
+          <span class="note">Roman tailoring. Worth every euro.</span>
+          <span class="origin">Italy · via Mr Porter, Breuninger</span>
+        </a>
+        <a class="link" href="https://suitsupply.com/de_DE" target="_blank" rel="noopener">
+          <span class="name">Suit Supply</span>
+          <span class="note">Modern, well cut, generous returns. Try it on.</span>
+          <span class="origin">Netherlands · German stores</span>
+        </a>
+        <a class="link" href="https://www.isaia.it/" target="_blank" rel="noopener">
+          <span class="name">Isaia</span>
+          <span class="note">Neapolitan tailoring. Premium, but wearable.</span>
+          <span class="origin">Italy · via Mr Porter, Harrods</span>
+        </a>
+        <a class="link" href="https://www.boglioli.it/" target="_blank" rel="noopener">
+          <span class="name">Boglioli</span>
+          <span class="note">Unstructured blazers. Sharp without trying.</span>
+          <span class="origin">Italy · via Mr Porter, Breuninger</span>
+        </a>
+        <a class="link" href="https://www.massimodutti.com/de/" target="_blank" rel="noopener">
+          <span class="name">Massimo Dutti</span>
+          <span class="note">Spanish. Clean lines. Reasonable money.</span>
+          <span class="origin">Spain · German stores</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="category">
+      <div class="category-title"><span>Shirts (Dress &amp; Casual)</span><span class="index">iv.</span></div>
+      <div class="links">
+        <a class="link" href="https://www.drakes.com/" target="_blank" rel="noopener">
+          <span class="name">Drake's</span>
+          <span class="note">London shirts &amp; ties. No marketing noise.</span>
+          <span class="origin">United Kingdom</span>
+        </a>
+        <a class="link" href="https://www.propercloth.com/" target="_blank" rel="noopener">
+          <span class="name">Proper Cloth</span>
+          <span class="note">Custom &amp; MTM. Excellent fabric library.</span>
+          <span class="origin">United States</span>
+        </a>
+        <a class="link" href="https://www.charlestyrwhitt.com/" target="_blank" rel="noopener">
+          <span class="name">Charles Tyrwhitt</span>
+          <span class="note">Vast range. Reliable. Sales worth waiting for.</span>
+          <span class="origin">United Kingdom</span>
+        </a>
+        <a class="link" href="https://www.gustin.com/" target="_blank" rel="noopener">
+          <span class="name">Gustin</span>
+          <span class="note">Japanese cloth. Proper fit. No flash.</span>
+          <span class="origin">United States · Direct</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="category">
+      <div class="category-title"><span>Knitwear</span><span class="index">v.</span></div>
+      <div class="links">
+        <a class="link" href="https://www.johnstonsofelgin.com/" target="_blank" rel="noopener">
+          <span class="name">Johnstons of Elgin</span>
+          <span class="note">Scottish merino &amp; cashmere. Proper weight.</span>
+          <span class="origin">Scotland</span>
+        </a>
+        <a class="link" href="https://www.inismeain.com/" target="_blank" rel="noopener">
+          <span class="name">Inis Meáin</span>
+          <span class="note">Irish linen &amp; cotton. Beautiful minimalism.</span>
+          <span class="origin">Ireland</span>
+        </a>
+        <a class="link" href="https://www.brunellocucinelli.com/" target="_blank" rel="noopener">
+          <span class="name">Brunello Cucinelli</span>
+          <span class="note">If you buy one truly excellent piece, it is here.</span>
+          <span class="origin">Italy · via Breuninger, P&amp;C</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="category">
+      <div class="category-title"><span>Socks (Quietly The Most Important Thing)</span><span class="index">vi.</span></div>
+      <div class="links">
+        <a class="link" href="https://www.falke.com/" target="_blank" rel="noopener">
+          <span class="name">Falke</span>
+          <span class="note">German precision. Premium materials. Local.</span>
+          <span class="origin">Germany · €15–20</span>
+        </a>
+        <a class="link" href="https://www.smartwool.com/" target="_blank" rel="noopener">
+          <span class="name">Smartwool</span>
+          <span class="note">Merino. Temperature-regulating. Durable.</span>
+          <span class="origin">United States · €12–18</span>
+        </a>
+        <a class="link" href="https://darntough.com/" target="_blank" rel="noopener">
+          <span class="name">Darn Tough</span>
+          <span class="note">Vermont merino. Lifetime warranty. No joke.</span>
+          <span class="origin">United States · €18–25</span>
+        </a>
+        <a class="link" href="https://www.pantherella.com/" target="_blank" rel="noopener">
+          <span class="name">Pantherella</span>
+          <span class="note">British heritage. Cotton/merino blends. Refined.</span>
+          <span class="origin">United Kingdom · €12–18</span>
+        </a>
+        <a class="link" href="https://www.bresciani.it/" target="_blank" rel="noopener">
+          <span class="name">Bresciani</span>
+          <span class="note">Italian luxury. Merino/cashmere. Investment.</span>
+          <span class="origin">Italy · via Mr Porter · €20–30</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="category">
+      <div class="category-title"><span>Technical, Done Right</span><span class="index">vii.</span></div>
+      <div class="links">
+        <a class="link" href="https://outlier.nyc/" target="_blank" rel="noopener">
+          <span class="name">Outlier</span>
+          <span class="note">Technical fabric, civilian cut. Designed for moving.</span>
+          <span class="origin">United States · Direct</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="category">
+      <div class="category-title"><span>German Houses Worth Your Time</span><span class="index">viii.</span></div>
+      <div class="links">
+        <a class="link" href="https://www.breuninger.com/" target="_blank" rel="noopener">
+          <span class="name">Breuninger</span>
+          <span class="note">Premium selection. Excellent returns. Trustworthy.</span>
+          <span class="origin">Stuttgart · German</span>
+        </a>
+        <a class="link" href="https://www.peek-cloppenburg.de/" target="_blank" rel="noopener">
+          <span class="name">Peek &amp; Cloppenburg</span>
+          <span class="note">Strong menswear floor. Italian/European depth.</span>
+          <span class="origin">Düsseldorf · German</span>
+        </a>
+        <a class="link" href="https://www.mytheresa.com/" target="_blank" rel="noopener">
+          <span class="name">Mytheresa</span>
+          <span class="note">Munich-based. Luxury. Curated rather than vast.</span>
+          <span class="origin">Munich · German</span>
+        </a>
+        <a class="link" href="https://www.mrporter.com/en-de/" target="_blank" rel="noopener">
+          <span class="name">Mr Porter</span>
+          <span class="note">The menswear specialist. Exceptional curation.</span>
+          <span class="origin">London · ships Germany</span>
+        </a>
+        <a class="link" href="https://www.farfetch.com/" target="_blank" rel="noopener">
+          <span class="name">Farfetch</span>
+          <span class="note">The route to brands you cannot find locally.</span>
+          <span class="origin">Global</span>
+        </a>
+      </div>
+    </div>
+
+  </section>
+
+</div>
+
+<section class="editors-note">
+  <div class="container">
+    <div class="label">A Note From The Editor</div>
+    <h2>This is what I actually wear, more or less.</h2>
+    <p>Everything on the previous list is a brand I own, have owned, have handled in a German shop, or have queued up in a browser tab and reasoned myself out of buying for the third time this year. None of these are paid placements. There are no affiliate kickbacks at the time of writing, though if that ever changes you will see it stated, plainly, at the top of any page where it applies. <em>Werbung</em> means advertising. I will use the word.</p>
+    <p>The list is also incomplete and personal. It reflects a 56-year-old Englishman living in Coburg, with a frame that suits Italian trousers, a fondness for British shoes, a sober view of Scottish knitwear, and the tired conviction that almost nobody on the streets of mainland Europe needs a Goretex shell to attend a dental appointment.</p>
+    <p>If you disagree, send a properly composed letter. If you agree, get the Incotex.</p>
+    <div class="signature">
+      <span class="name">Craig Kinnell</span>
+      <span class="role">Editor &amp; Sole Correspondent</span>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <aside class="disclosure" id="disclosure" hidden>
+    <span class="tag">Hinweis · Disclosure</span>
+    <p>Some links on this page are <em>affiliate links / Provisionslinks</em>. If you click through and buy, the gazette receives a small commission at no cost to you. This does not influence what is recommended. Brands have not paid for placement, and items I dislike are not listed.</p>
+  </aside>
+  <footer>
+    <div class="ornament">◆ ◆ ◆</div>
+    <p>Dressed, Not Equipped — Vol. I, No. 1</p>
+    <p>Set in Playfair, Cormorant &amp; DM Mono</p>
+    <p><a href="golf.html" style="color:inherit;">Also available: Vol. I, No. 2 — The Golf Supplement</a></p>
+    <p class="small">No fleece was harmed in the making of this gazette.<br>Coburg, Germany. MMXXVI. All rights, such as they are, reserved.</p>
+  </footer>
+</div>
+
+</body>
+</html>
