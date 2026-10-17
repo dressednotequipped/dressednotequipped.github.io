@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>The Golf Supplement — Dressed, Not Equipped</title>
+<title>Golf — Dressed, Not Equipped</title>
 <meta name="description" content="Vol. I, No. 2 of Dressed, Not Equipped: offences against tailoring observed on the golf course. Written from Coburg, Germany." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -404,6 +404,16 @@
   }
   a.back { color: inherit; text-decoration: none; border-bottom: 1px solid currentColor; }
   a.back:hover { color: var(--oxblood); }
+
+  /* ─── SECTION NAV (shared) ────────────────────────── */
+  .sitenav {
+    display: flex; justify-content: center; flex-wrap: wrap; gap: 8px 40px;
+    padding: 14px 0; border-bottom: 1px solid var(--rule);
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase;
+  }
+  .sitenav a { color: var(--ink-soft); text-decoration: none; padding-bottom: 3px; border-bottom: 1px solid transparent; }
+  .sitenav a:hover, .sitenav a:focus-visible { color: var(--oxblood); border-color: currentColor; }
+  .sitenav a[aria-current="page"] { color: var(--oxblood); border-color: var(--oxblood); }
 </style>
 </head>
 <body>
@@ -412,13 +422,18 @@
   <header class="masthead">
     <div class="left">
       <span>Vol. I — No. 2</span>
-      <span><a class="back" href="./">← Return to No. 1</a></span>
+      <span>Section II · Golf</span>
     </div>
     <div class="right">
       <span>The Golf Supplement</span>
       <span>Coburg · Germany</span>
     </div>
   </header>
+  <nav class="sitenav" aria-label="Sections">
+    <a href="./">Front Page</a>
+    <a href="menswear.html">Menswear</a>
+    <a href="golf.html" aria-current="page">Golf</a>
+  </nav>
 
   <section class="hero">
     <div class="kicker">A Supplement for the Sporting Gentleman</div>
@@ -614,7 +629,7 @@
   <footer>
     <div class="ornament">◆ ◆ ◆</div>
     <p>Dressed, Not Equipped — Vol. I, No. 2 · The Golf Supplement</p>
-    <p><a class="back" href="./">Return to Vol. I, No. 1</a></p>
+    <p><a class="back" href="menswear.html">← Previous section: Menswear</a></p>
     <p class="small">No caddie was harmed in the making of this supplement.<br>Coburg, Germany. MMXXVI. All rights, such as they are, reserved.</p>
   </footer>
 </div>

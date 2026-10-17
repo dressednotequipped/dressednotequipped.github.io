@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Dressed, Not Equipped — A Gazette of Town &amp; Course by Craig Kinnell</title>
+<title>Dressed, Not Equipped — A Gazette of Town &amp; Course</title>
 <meta name="description" content="A field guide for the over-50 gentleman, in town and on the golf course, against the tyranny of technical clothing. Written from Coburg, Germany." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -430,6 +430,72 @@
   .crime:nth-child(4) { animation-delay: 0.20s; }
   .crime:nth-child(5) { animation-delay: 0.25s; }
   .crime:nth-child(6) { animation-delay: 0.30s; }
+
+  /* ─── SECTION NAV (shared) ────────────────────────── */
+  .sitenav {
+    display: flex; justify-content: center; flex-wrap: wrap; gap: 8px 40px;
+    padding: 14px 0; border-bottom: 1px solid var(--rule);
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase;
+  }
+  .sitenav a { color: var(--ink-soft); text-decoration: none; padding-bottom: 3px; border-bottom: 1px solid transparent; }
+  .sitenav a:hover, .sitenav a:focus-visible { color: var(--oxblood); border-color: currentColor; }
+  .sitenav a[aria-current="page"] { color: var(--oxblood); border-color: var(--oxblood); }
+
+  /* ─── COVER: TWO SECTIONS ─────────────────────────── */
+  .sections {
+    display: grid; grid-template-columns: 1fr 1fr;
+    border: 1px solid var(--rule); margin: 56px 0 0;
+  }
+  .panel { padding: 48px 40px 44px; display: flex; flex-direction: column; }
+  .panel.town { background: var(--paper-deep); border-right: 1px solid var(--rule); }
+  .panel.course { background: #1f3a2e; color: var(--paper); }
+  .panel .sec-num {
+    font-family: var(--display); font-style: italic; font-weight: 700;
+    font-size: 30px; color: var(--oxblood); line-height: 1;
+  }
+  .panel.course .sec-num, .panel.course .sec-tag { color: #d9c9a3; }
+  .panel .sec-tag {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.35em;
+    text-transform: uppercase; color: var(--oxblood); margin: 10px 0 18px;
+  }
+  .panel h2 {
+    font-family: var(--display); font-weight: 900;
+    font-size: clamp(48px, 6vw, 84px); line-height: 0.95; letter-spacing: -0.02em; margin-bottom: 18px;
+  }
+  .panel p { font-size: 18px; line-height: 1.5; color: var(--ink-soft); max-width: 40ch; margin-bottom: 26px; }
+  .panel.course p { color: #e8dfcc; }
+  .contents { list-style: none; border-top: 1px solid rgba(42,36,29,0.35); margin-bottom: 32px; }
+  .panel.course .contents { border-color: rgba(244,237,224,0.35); }
+  .contents li {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 14px;
+    padding: 12px 0; border-bottom: 1px solid rgba(42,36,29,0.35);
+  }
+  .panel.course .contents li { border-color: rgba(244,237,224,0.35); }
+  .contents .t { font-family: var(--display); font-weight: 700; font-size: 19px; line-height: 1.2; }
+  .contents .v {
+    font-family: var(--mono); font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--oxblood); white-space: nowrap;
+  }
+  .panel.course .contents .v { color: #d9c9a3; }
+  .enter {
+    margin-top: auto; align-self: flex-start;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase;
+    text-decoration: none; padding: 14px 22px; transition: background 0.3s, color 0.3s;
+  }
+  .panel.town .enter { background: var(--ink); color: var(--paper); }
+  .panel.town .enter:hover, .panel.town .enter:focus-visible { background: var(--oxblood); }
+  .panel.course .enter { background: var(--paper); color: #1f3a2e; }
+  .panel.course .enter:hover, .panel.course .enter:focus-visible { background: #d9c9a3; }
+  .cover-note {
+    text-align: center; padding: 56px 0 10px; max-width: 640px; margin: 0 auto;
+    font-style: italic; color: var(--ink-soft); font-size: 20px; line-height: 1.5;
+  }
+  .cover-note em { color: var(--oxblood); }
+  @media (max-width: 760px) {
+    .sections { grid-template-columns: 1fr; }
+    .panel { padding: 36px 24px; }
+    .panel.town { border-right: 0; border-bottom: 1px solid var(--rule); }
+  }
 </style>
 </head>
 <body>
@@ -437,522 +503,61 @@
 <div class="container">
   <header class="masthead">
     <div class="left">
-      <span>Vol. I — No. 1</span>
+      <span>Vol. I</span>
       <span>Est. MMXXVI</span>
-      <span><a href="golf.html" style="color:var(--oxblood);text-decoration:none;border-bottom:1px solid currentColor;">No. 2 — The Golf Supplement →</a></span>
     </div>
     <div class="right">
       <span>A Gazette of Town &amp; Course</span>
       <span>Coburg · Germany</span>
     </div>
   </header>
+  <nav class="sitenav" aria-label="Sections">
+    <a href="./" aria-current="page">Front Page</a>
+    <a href="menswear.html">Menswear</a>
+    <a href="golf.html">Golf</a>
+  </nav>
 
   <section class="hero">
-    <div class="kicker">A Field Guide for the Gentleman, in Town &amp; on the Course</div>
+    <div class="kicker">A Field Guide for the Gentleman over Fifty</div>
     <h1>Dressed,<br><span class="amp">&amp;</span> Not Equipped</h1>
-    <p class="deck">For the man over fifty who has noticed that the café is not a fucking base camp, the city tram does not require a 30-litre technical rucksack, and a five-metre putt does not require a laser.</p>
+    <p class="deck">The café is not a fucking base camp. The green is not a survey site. Two sections, one complaint: you are dressed for an expedition that is not happening.</p>
     <div class="byline">By <em>Craig Kinnell</em></div>
-    <svg class="ornament" viewBox="0 0 80 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0 8 H30" stroke="currentColor" stroke-width="1"/>
-      <circle cx="40" cy="8" r="3" fill="currentColor"/>
-      <path d="M50 8 H80" stroke="currentColor" stroke-width="1"/>
-    </svg>
   </section>
-</div>
 
-<div class="strip">
-  <span>No Goretex Indoors</span>
-  <span class="dot">◆</span>
-  <span>No Zip-Off Trousers</span>
-  <span class="dot">◆</span>
-  <span>No Trail Shoes To Dinner</span>
-  <span class="dot">◆</span>
-  <span>No Laser On The Green</span>
-  <span class="dot">◆</span>
-  <span>Stand Up Straight</span>
-</div>
+  <div class="sections">
+    <section class="panel town" aria-labelledby="town-h">
+      <span class="sec-num">I.</span>
+      <span class="sec-tag">In Town</span>
+      <h2 id="town-h">Menswear</h2>
+      <p>Against the softshell in the trattoria, the trail shoe at dinner and the 32-litre rucksack on the school run. Plus the brands worth your money instead.</p>
+      <ul class="contents">
+        <li><span class="t">The Six Crimes</span><span class="v">Indefensible</span></li>
+        <li><span class="t">Four Truths Before You Spend</span><span class="v">Principles</span></li>
+        <li><span class="t">The Remedies</span><span class="v">45 brands</span></li>
+      </ul>
+      <a class="enter" href="menswear.html">Enter Menswear</a>
+    </section>
 
-<!-- ═══ FROM THE FAIRWAY ═══ -->
-<section class="fairway">
-  <div class="container">
-    <div class="fairway-grid">
-      <div>
-        <span class="section-label" style="border-color:var(--paper);color:var(--paper);">Now in Print<span class="num" style="color:var(--paper);">№ 2.</span></span>
-      </div>
-      <div>
-        <div class="fw-kicker">The Golf Supplement</div>
-        <h2>Eighteen holes, <em>&amp;</em> no excuses.</h2>
-        <p>The editor spent the summer on the course and came back with one tanned hand, a laser in a holster, and a dossier. Six offences between the first tee and the nineteenth hole, filed from the inside, with the guilt of a participant.</p>
-        <ul class="fw-teasers">
-          <li><span class="fw-title">The Five-Metre Survey</span><span class="fw-verdict">Aggravated</span></li>
-          <li><span class="fw-title">The One-Glove Problem</span><span class="fw-verdict">Chronic</span></li>
-          <li><span class="fw-title">The Logo Audit</span><span class="fw-verdict">Egregious</span></li>
-        </ul>
-        <a class="fw-cta" href="golf.html">Read the Golf Supplement</a>
-      </div>
-    </div>
+    <section class="panel course" aria-labelledby="course-h">
+      <span class="sec-num">II.</span>
+      <span class="sec-tag">On the Course</span>
+      <h2 id="course-h">Golf</h2>
+      <p>Filed from the inside by an editor with one tanned hand. Lasers on the green, logo audits, and dress codes that ban jeans but welcome whale-print trousers.</p>
+      <ul class="contents">
+        <li><span class="t">The Five-Metre Survey</span><span class="v">Aggravated</span></li>
+        <li><span class="t">The One-Glove Problem</span><span class="v">Chronic</span></li>
+        <li><span class="t">Four Rules for the Course</span><span class="v">Dressed instead</span></li>
+      </ul>
+      <a class="enter" href="golf.html">Enter Golf</a>
+    </section>
   </div>
-</section>
 
-<div class="container">
+  <p class="cover-note">Written from Coburg by a man who owns a rangefinder and is not proud. <em>Submissions and properly composed letters welcome.</em></p>
 
-  <section class="manifesto">
-    <div class="manifesto-grid">
-      <div><span class="section-label">The Manifesto<span class="num">I.</span></span></div>
-      <div>
-        <h2>You are not climbing the <em>Watzmann.</em> You are getting a flat white.</h2>
-        <p class="lede">Somewhere between the fall of the Berlin Wall and the rise of the all-day fleece, the European man over fifty made a quiet, terrible bargain. He swapped his overcoat for a softshell. He swapped his shoes for footwear that bills itself as <em>technical</em>. He took to the cobblestones of Bamberg and Bruges in the apparel of a man preparing to bivouac.</p>
-        <p>This gazette is not a moral panic. It is an intervention, written in the spirit of friendship. We have nothing against mountains. We have nothing against Jack Wolfskin in its proper context, which is, broadly, a mountain. We do, however, have an objection to walking past a respectable trattoria and seeing a man in his mid-fifties dressed for a weather event that is not happening.</p>
-        <p>You are an adult. You have a job, or you had one. You have books. You have opinions about wine. The clothing should match the man.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="crimes">
-    <div class="crimes-header">
-      <span class="section-label" style="display:inline-block;text-align:left;">Part Two</span>
-      <h2>The <em>Six</em> Crimes</h2>
-      <p class="sub">An incomplete dossier of offences committed daily on the streets of Munich, Hamburg, and indeed Coburg.</p>
-    </div>
-
-    <div class="crimes-list">
-      <article class="crime">
-        <div class="num">№ 01</div>
-        <h3>The Commute Anorak</h3>
-        <p>A Goretex shell, fully sealed, hood up, on a 4°C morning in a tram carriage that is internally tropical. He arrives at the office sweating like a man who has just summited the Hörnli Ridge. He has, in fact, summited the U-Bahn.</p>
-        <span class="verdict">Verdict — Indefensible</span>
-      </article>
-      <article class="crime">
-        <div class="num">№ 02</div>
-        <h3>The Trail Runner At Dinner</h3>
-        <p>Salomon Speedcross, 4mm lugs caked in mud from no terrain in particular, paired with a clean shirt and chinos. The shoe is a brown-and-orange neon scream beneath an otherwise civilised man. The waiter looks down. The waiter understands.</p>
-        <span class="verdict">Verdict — Aggravated</span>
-      </article>
-      <article class="crime">
-        <div class="num">№ 03</div>
-        <h3>The Technical Rucksack</h3>
-        <p>32 litres. Hip belt. Hydration sleeve. Daisy-chain webbing for ice axe attachment. Inside: a paperback, a banana, and the keys to a Volvo. He is not crossing the Karwendel. He is collecting his daughter from ballet.</p>
-        <span class="verdict">Verdict — Egregious</span>
-      </article>
-      <article class="crime">
-        <div class="num">№ 04</div>
-        <h3>The Zip-Off Trouser</h3>
-        <p>A garment that is, optimistically, two garments. Both worse than one. The horizontal zip line sits across the thigh like a scar from an unsuccessful operation. He wears them to a wine bar. He has not, since 2003, removed the lower portion.</p>
-        <span class="verdict">Verdict — Capital</span>
-      </article>
-      <article class="crime">
-        <div class="num">№ 05</div>
-        <h3>The Fleece Gilet Over The Shirt</h3>
-        <p>The international uniform of the man who has confused a pension review with a hunting trip. The shoulders bunch. The pockets bulge with car keys and a Leatherman he has never used. He believes this looks <em>practical.</em> It looks like a pyjama waistcoat over a school uniform.</p>
-        <span class="verdict">Verdict — Pitiable</span>
-      </article>
-      <article class="crime">
-        <div class="num">№ 06</div>
-        <h3>The Convertible Watch Band</h3>
-        <p>A Garmin the size of a small saucepan, on a velcro strap, paired with a blazer at a wedding. He glances at it during the speeches. He is monitoring his resting heart rate. The bride notices. The bride is no longer thinking about the bride.</p>
-        <span class="verdict">Verdict — Sentenced</span>
-      </article>
-    </div>
-  </section>
-
-  <!-- ═══ FIELD SPECIMENS ═══ -->
-  <section class="specimens">
-    <div class="specimens-header">
-      <div><span class="section-label">Field Specimens<span class="num">II½.</span></span></div>
-      <div>
-        <h2>The <em>evidence,</em> photographed with discretion.</h2>
-        <p>A taxonomy of garment crimes, shot in detail. No faces, no identifying features — only the evidence. Photographed in the field. Filed without comment.</p>
-      </div>
-    </div>
-    <div class="specimens-grid">
-      <figure class="specimen">
-        <div class="specimen-frame">
-          <div class="specimen-placeholder">
-            <span class="ph-label">Specimen A</span>
-            <span class="ph-detail">The cleated sole, on a wine bar floor</span>
-          </div>
-        </div>
-        <figcaption><span class="caption-num">A.</span> Trail-shoe sole detail, cobblestone context.</figcaption>
-      </figure>
-      <figure class="specimen">
-        <div class="specimen-frame">
-          <div class="specimen-placeholder">
-            <span class="ph-label">Specimen B</span>
-            <span class="ph-detail">Daisy-chain webbing in a café queue</span>
-          </div>
-        </div>
-        <figcaption><span class="caption-num">B.</span> Technical rucksack, viewed from rear.</figcaption>
-      </figure>
-      <figure class="specimen">
-        <div class="specimen-frame">
-          <div class="specimen-placeholder">
-            <span class="ph-label">Specimen C</span>
-            <span class="ph-detail">The horizontal zip across the thigh</span>
-          </div>
-        </div>
-        <figcaption><span class="caption-num">C.</span> Zip-off trouser seam, mid-shin.</figcaption>
-      </figure>
-      <figure class="specimen">
-        <div class="specimen-frame">
-          <div class="specimen-placeholder">
-            <span class="ph-label">Specimen D</span>
-            <span class="ph-detail">Velcro &amp; matte plastic, beneath a cuff</span>
-          </div>
-        </div>
-        <figcaption><span class="caption-num">D.</span> Wrist-mounted GPS at a formal event.</figcaption>
-      </figure>
-      <figure class="specimen">
-        <div class="specimen-frame">
-          <div class="specimen-placeholder">
-            <span class="ph-label">Specimen E</span>
-            <span class="ph-detail">Bunched shoulders, bulging pockets</span>
-          </div>
-        </div>
-        <figcaption><span class="caption-num">E.</span> Fleece gilet, three-quarter rear.</figcaption>
-      </figure>
-      <figure class="specimen">
-        <div class="specimen-frame">
-          <div class="specimen-placeholder">
-            <span class="ph-label">Specimen F</span>
-            <span class="ph-detail">Hood up, indoors, in May</span>
-          </div>
-        </div>
-        <figcaption><span class="caption-num">F.</span> Goretex shell, tram interior.</figcaption>
-      </figure>
-    </div>
-    <p class="specimens-note">— Submissions accepted. Faces and identifying features are removed before publication. <em>Schicke nichts, was du nicht sehen willst.</em></p>
-  </section>
-
-</div>
-
-<section class="pullquote">
-  <div class="container">
-    <blockquote>If your shoes are designed for terrain you will never encounter, you have not bought shoes. You have bought a <em>fantasy.</em></blockquote>
-    <cite>— A Friend, Speaking Honestly</cite>
-  </div>
-</section>
-
-<div class="container">
-
-  <section class="principles">
-    <div class="principles-header">
-      <div><span class="section-label">The Principles<span class="num">III.</span></span></div>
-      <div><h2>Four <em>truths</em> before you spend a euro.</h2></div>
-    </div>
-    <div class="principles-grid">
-      <div class="principle">
-        <div class="num">i.</div>
-        <h3>Fit matters more than brand.</h3>
-        <p>A €40 shirt that fits beats a €400 one that does not. Tailored cuts. Not tight. Tight is for men who are still trying to prove something.</p>
-      </div>
-      <div class="principle">
-        <div class="num">ii.</div>
-        <h3>Buy fewer things, better.</h3>
-        <p>One pair of proper Goodyear-welted shoes will outlive three pairs of trainers and look better at dinner. The maths is on your side.</p>
-      </div>
-      <div class="principle">
-        <div class="num">iii.</div>
-        <h3>If it has a logo, ask why.</h3>
-        <p>A small woven label inside is craftsmanship. A large embroidered logo on the chest is paid advertising you have funded yourself.</p>
-      </div>
-      <div class="principle">
-        <div class="num">iv.</div>
-        <h3>The good brands sell through proper retailers.</h3>
-        <p>Italian houses controlling their distribution is a sign of quality, not inconvenience. Find Breuninger. Find Mr Porter. Find Farfetch.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="remedies">
-    <div class="remedies-header">
-      <div><span class="section-label">The Remedies<span class="num">IV.</span></span></div>
-      <div>
-        <h2>Where to <em>begin again.</em></h2>
-        <p>The brands I actually wear, or would wear, or have walked into a shop in Frankfurt to handle. Not exhaustive. Not sponsored. Edited from a working wardrobe.</p>
-      </div>
-    </div>
-
-    <div class="category">
-      <div class="category-title"><span>Plain T-Shirts (The Foundation)</span><span class="index">i.</span></div>
-      <div class="links">
-        <a class="link" href="https://www.uniqlo.com/de/de/" target="_blank" rel="noopener">
-          <span class="name">Uniqlo</span>
-          <span class="note">Airism &amp; Supima. Honest fit. The entry point.</span>
-          <span class="origin">Japan · €15–20</span>
-        </a>
-        <a class="link" href="https://www.sunspel.com/" target="_blank" rel="noopener">
-          <span class="name">Sunspel</span>
-          <span class="note">Made in England. Heavyweight. Ages beautifully.</span>
-          <span class="origin">United Kingdom · €80–100</span>
-        </a>
-        <a class="link" href="https://www.reiss.com/" target="_blank" rel="noopener">
-          <span class="name">Reiss</span>
-          <span class="note">British tailoring sensibility. A grown-up fit.</span>
-          <span class="origin">United Kingdom · €60–80</span>
-        </a>
-        <a class="link" href="https://www.cos.com/" target="_blank" rel="noopener">
-          <span class="name">COS</span>
-          <span class="note">Understated, well cut, quietly considered.</span>
-          <span class="origin">Sweden · €40–50</span>
-        </a>
-        <a class="link" href="https://www.trigema.de/" target="_blank" rel="noopener">
-          <span class="name">Trigema</span>
-          <span class="note">German-made. Solid. The honest local.</span>
-          <span class="origin">Germany · €30–40</span>
-        </a>
-      </div>
-    </div>
-
-    <div class="category">
-      <div class="category-title"><span>Footwear (For Streets, Not Scree)</span><span class="index">ii.</span></div>
-      <div class="links">
-        <a class="link" href="https://www.crockettandjones.com/" target="_blank" rel="noopener">
-          <span class="name">Crockett &amp; Jones</span>
-          <span class="note">Northampton. Resoleable. A serious shoe.</span>
-          <span class="origin">United Kingdom</span>
-        </a>
-        <a class="link" href="https://www.edwardgreen.com/" target="_blank" rel="noopener">
-          <span class="name">Edward Green</span>
-          <span class="note">Bespoke-adjacent. Beautiful lasts. The summit.</span>
-          <span class="origin">United Kingdom</span>
-        </a>
-        <a class="link" href="https://www.carminashoemaker.com/" target="_blank" rel="noopener">
-          <span class="name">Carmina</span>
-          <span class="note">Mallorca. Goodyear welt. Reasonable, in context.</span>
-          <span class="origin">Spain</span>
-        </a>
-        <a class="link" href="https://aldenshop.com/" target="_blank" rel="noopener">
-          <span class="name">Alden</span>
-          <span class="note">Massachusetts. The shell cordovan religion.</span>
-          <span class="origin">United States</span>
-        </a>
-        <a class="link" href="https://www.loake.co.uk/" target="_blank" rel="noopener">
-          <span class="name">Loake</span>
-          <span class="note">British value. Underrated. Start here.</span>
-          <span class="origin">United Kingdom</span>
-        </a>
-        <a class="link" href="https://www.allenedmonds.com/" target="_blank" rel="noopener">
-          <span class="name">Allen Edmonds</span>
-          <span class="note">American craftsmanship. A rebuilding service.</span>
-          <span class="origin">United States</span>
-        </a>
-        <a class="link" href="https://www.grenson.com/" target="_blank" rel="noopener">
-          <span class="name">Grenson</span>
-          <span class="note">Goodyear welted. Quietly excellent leather.</span>
-          <span class="origin">United Kingdom</span>
-        </a>
-        <a class="link" href="https://www.beckettsimonon.com/" target="_blank" rel="noopener">
-          <span class="name">Beckett Simonon</span>
-          <span class="note">Direct-to-consumer. Honest construction.</span>
-          <span class="origin">Colombia · Direct</span>
-        </a>
-        <a class="link" href="https://www.meermin.com/" target="_blank" rel="noopener">
-          <span class="name">Meermin</span>
-          <span class="note">Spanish handcraft. Refined. Discreet.</span>
-          <span class="origin">Spain</span>
-        </a>
-        <a class="link" href="https://www.carlossantosshoes.com/" target="_blank" rel="noopener">
-          <span class="name">Carlos Santos</span>
-          <span class="note">Portuguese welt. Excellent leather. Underloved.</span>
-          <span class="origin">Portugal</span>
-        </a>
-        <a class="link" href="https://scarosso.com/" target="_blank" rel="noopener">
-          <span class="name">Scarosso</span>
-          <span class="note">Made-to-order Italian. Minimal markup.</span>
-          <span class="origin">Italy</span>
-        </a>
-        <a class="link" href="https://thursdayboots.com/" target="_blank" rel="noopener">
-          <span class="name">Thursday Boot Co.</span>
-          <span class="note">Modern sensibility. Honest price.</span>
-          <span class="origin">United States</span>
-        </a>
-      </div>
-    </div>
-
-    <div class="category">
-      <div class="category-title"><span>Trousers &amp; Tailoring</span><span class="index">iii.</span></div>
-      <div class="links">
-        <a class="link" href="https://www.mrporter.com/en-de/mens/designer/incotex" target="_blank" rel="noopener">
-          <span class="name">Incotex</span>
-          <span class="note">Italian. Understated. Probably the best trouser made.</span>
-          <span class="origin">Italy · via Mr Porter, Breuninger</span>
-        </a>
-        <a class="link" href="https://www.mrporter.com/en-de/mens/designer/rota" target="_blank" rel="noopener">
-          <span class="name">Rota</span>
-          <span class="note">Roman tailoring. Worth every euro.</span>
-          <span class="origin">Italy · via Mr Porter, Breuninger</span>
-        </a>
-        <a class="link" href="https://suitsupply.com/de_DE" target="_blank" rel="noopener">
-          <span class="name">Suit Supply</span>
-          <span class="note">Modern, well cut, generous returns. Try it on.</span>
-          <span class="origin">Netherlands · German stores</span>
-        </a>
-        <a class="link" href="https://www.isaia.it/" target="_blank" rel="noopener">
-          <span class="name">Isaia</span>
-          <span class="note">Neapolitan tailoring. Premium, but wearable.</span>
-          <span class="origin">Italy · via Mr Porter, Harrods</span>
-        </a>
-        <a class="link" href="https://www.boglioli.it/" target="_blank" rel="noopener">
-          <span class="name">Boglioli</span>
-          <span class="note">Unstructured blazers. Sharp without trying.</span>
-          <span class="origin">Italy · via Mr Porter, Breuninger</span>
-        </a>
-        <a class="link" href="https://www.massimodutti.com/de/" target="_blank" rel="noopener">
-          <span class="name">Massimo Dutti</span>
-          <span class="note">Spanish. Clean lines. Reasonable money.</span>
-          <span class="origin">Spain · German stores</span>
-        </a>
-      </div>
-    </div>
-
-    <div class="category">
-      <div class="category-title"><span>Shirts (Dress &amp; Casual)</span><span class="index">iv.</span></div>
-      <div class="links">
-        <a class="link" href="https://www.drakes.com/" target="_blank" rel="noopener">
-          <span class="name">Drake's</span>
-          <span class="note">London shirts &amp; ties. No marketing noise.</span>
-          <span class="origin">United Kingdom</span>
-        </a>
-        <a class="link" href="https://www.propercloth.com/" target="_blank" rel="noopener">
-          <span class="name">Proper Cloth</span>
-          <span class="note">Custom &amp; MTM. Excellent fabric library.</span>
-          <span class="origin">United States</span>
-        </a>
-        <a class="link" href="https://www.charlestyrwhitt.com/" target="_blank" rel="noopener">
-          <span class="name">Charles Tyrwhitt</span>
-          <span class="note">Vast range. Reliable. Sales worth waiting for.</span>
-          <span class="origin">United Kingdom</span>
-        </a>
-        <a class="link" href="https://www.gustin.com/" target="_blank" rel="noopener">
-          <span class="name">Gustin</span>
-          <span class="note">Japanese cloth. Proper fit. No flash.</span>
-          <span class="origin">United States · Direct</span>
-        </a>
-      </div>
-    </div>
-
-    <div class="category">
-      <div class="category-title"><span>Knitwear</span><span class="index">v.</span></div>
-      <div class="links">
-        <a class="link" href="https://www.johnstonsofelgin.com/" target="_blank" rel="noopener">
-          <span class="name">Johnstons of Elgin</span>
-          <span class="note">Scottish merino &amp; cashmere. Proper weight.</span>
-          <span class="origin">Scotland</span>
-        </a>
-        <a class="link" href="https://www.inismeain.com/" target="_blank" rel="noopener">
-          <span class="name">Inis Meáin</span>
-          <span class="note">Irish linen &amp; cotton. Beautiful minimalism.</span>
-          <span class="origin">Ireland</span>
-        </a>
-        <a class="link" href="https://www.brunellocucinelli.com/" target="_blank" rel="noopener">
-          <span class="name">Brunello Cucinelli</span>
-          <span class="note">If you buy one truly excellent piece, it is here.</span>
-          <span class="origin">Italy · via Breuninger, P&amp;C</span>
-        </a>
-      </div>
-    </div>
-
-    <div class="category">
-      <div class="category-title"><span>Socks (Quietly The Most Important Thing)</span><span class="index">vi.</span></div>
-      <div class="links">
-        <a class="link" href="https://www.falke.com/" target="_blank" rel="noopener">
-          <span class="name">Falke</span>
-          <span class="note">German precision. Premium materials. Local.</span>
-          <span class="origin">Germany · €15–20</span>
-        </a>
-        <a class="link" href="https://www.smartwool.com/" target="_blank" rel="noopener">
-          <span class="name">Smartwool</span>
-          <span class="note">Merino. Temperature-regulating. Durable.</span>
-          <span class="origin">United States · €12–18</span>
-        </a>
-        <a class="link" href="https://darntough.com/" target="_blank" rel="noopener">
-          <span class="name">Darn Tough</span>
-          <span class="note">Vermont merino. Lifetime warranty. No joke.</span>
-          <span class="origin">United States · €18–25</span>
-        </a>
-        <a class="link" href="https://www.pantherella.com/" target="_blank" rel="noopener">
-          <span class="name">Pantherella</span>
-          <span class="note">British heritage. Cotton/merino blends. Refined.</span>
-          <span class="origin">United Kingdom · €12–18</span>
-        </a>
-        <a class="link" href="https://www.bresciani.it/" target="_blank" rel="noopener">
-          <span class="name">Bresciani</span>
-          <span class="note">Italian luxury. Merino/cashmere. Investment.</span>
-          <span class="origin">Italy · via Mr Porter · €20–30</span>
-        </a>
-      </div>
-    </div>
-
-    <div class="category">
-      <div class="category-title"><span>Technical, Done Right</span><span class="index">vii.</span></div>
-      <div class="links">
-        <a class="link" href="https://outlier.nyc/" target="_blank" rel="noopener">
-          <span class="name">Outlier</span>
-          <span class="note">Technical fabric, civilian cut. Designed for moving.</span>
-          <span class="origin">United States · Direct</span>
-        </a>
-      </div>
-    </div>
-
-    <div class="category">
-      <div class="category-title"><span>German Houses Worth Your Time</span><span class="index">viii.</span></div>
-      <div class="links">
-        <a class="link" href="https://www.breuninger.com/" target="_blank" rel="noopener">
-          <span class="name">Breuninger</span>
-          <span class="note">Premium selection. Excellent returns. Trustworthy.</span>
-          <span class="origin">Stuttgart · German</span>
-        </a>
-        <a class="link" href="https://www.peek-cloppenburg.de/" target="_blank" rel="noopener">
-          <span class="name">Peek &amp; Cloppenburg</span>
-          <span class="note">Strong menswear floor. Italian/European depth.</span>
-          <span class="origin">Düsseldorf · German</span>
-        </a>
-        <a class="link" href="https://www.mytheresa.com/" target="_blank" rel="noopener">
-          <span class="name">Mytheresa</span>
-          <span class="note">Munich-based. Luxury. Curated rather than vast.</span>
-          <span class="origin">Munich · German</span>
-        </a>
-        <a class="link" href="https://www.mrporter.com/en-de/" target="_blank" rel="noopener">
-          <span class="name">Mr Porter</span>
-          <span class="note">The menswear specialist. Exceptional curation.</span>
-          <span class="origin">London · ships Germany</span>
-        </a>
-        <a class="link" href="https://www.farfetch.com/" target="_blank" rel="noopener">
-          <span class="name">Farfetch</span>
-          <span class="note">The route to brands you cannot find locally.</span>
-          <span class="origin">Global</span>
-        </a>
-      </div>
-    </div>
-
-  </section>
-
-</div>
-
-<section class="editors-note">
-  <div class="container">
-    <div class="label">A Note From The Editor</div>
-    <h2>This is what I actually wear, more or less.</h2>
-    <p>Everything on the previous list is a brand I own, have owned, have handled in a German shop, or have queued up in a browser tab and reasoned myself out of buying for the third time this year. None of these are paid placements. There are no affiliate kickbacks at the time of writing, though if that ever changes you will see it stated, plainly, at the top of any page where it applies. <em>Werbung</em> means advertising. I will use the word.</p>
-    <p>The list is also incomplete and personal. It reflects a 56-year-old Englishman living in Coburg, with a frame that suits Italian trousers, a fondness for British shoes, a sober view of Scottish knitwear, and the tired conviction that almost nobody on the streets of mainland Europe needs a Goretex shell to attend a dental appointment.</p>
-    <p>If you disagree, send a properly composed letter. If you agree, get the Incotex.</p>
-    <div class="signature">
-      <span class="name">Craig Kinnell</span>
-      <span class="role">Editor &amp; Sole Correspondent</span>
-    </div>
-  </div>
-</section>
-
-<div class="container">
-  <aside class="disclosure" id="disclosure" hidden>
-    <span class="tag">Hinweis · Disclosure</span>
-    <p>Some links on this page are <em>affiliate links / Provisionslinks</em>. If you click through and buy, the gazette receives a small commission at no cost to you. This does not influence what is recommended. Brands have not paid for placement, and items I dislike are not listed.</p>
-  </aside>
   <footer>
     <div class="ornament">◆ ◆ ◆</div>
-    <p>Dressed, Not Equipped — Vol. I, No. 1</p>
+    <p>Dressed, Not Equipped — Vol. I</p>
     <p>Set in Playfair, Cormorant &amp; DM Mono</p>
-    <p><a href="golf.html" style="color:inherit;">Also available: Vol. I, No. 2 — The Golf Supplement</a></p>
     <p class="small">No fleece was harmed in the making of this gazette.<br>Coburg, Germany. MMXXVI. All rights, such as they are, reserved.</p>
   </footer>
 </div>
