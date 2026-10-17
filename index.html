@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Dressed, Not Equipped — A Gazette of Town &amp; Course</title>
-<meta name="description" content="A field guide for the over-50 gentleman, in town and on the golf course, against the tyranny of technical clothing. Written from Coburg, Germany." />
+<title>Dressed, Not Equipped — A Golf Gazette by Craig Kinnell</title>
+<meta name="description" content="A deadpan golf gazette for the gentleman over fifty: rangefinders on the green, one-glove tan lines, logo audits and how to dress instead. Written from Coburg, Germany." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
@@ -383,40 +383,6 @@
     .specimens-grid { grid-template-columns: 1fr 1fr; gap: 18px; }
     .strip span { display: inline-block; margin: 2px 8px; }
   }
-
-  /* ─── FROM THE FAIRWAY (front-page golf feature) ──── */
-  .fairway { background: #1f3a2e; color: var(--paper); padding: 70px 0; position: relative; z-index: 2; }
-  .fairway-grid { display: grid; grid-template-columns: 1fr 2.4fr; gap: 60px; align-items: start; }
-  .fairway .fw-kicker {
-    font-family: var(--mono); font-size: 11px; letter-spacing: 0.35em;
-    text-transform: uppercase; color: #d9c9a3; margin-bottom: 12px;
-  }
-  .fairway h2 {
-    font-family: var(--display); font-weight: 900;
-    font-size: clamp(36px, 5.5vw, 68px); line-height: 1; letter-spacing: -0.02em; margin-bottom: 20px;
-  }
-  .fairway h2 em { font-style: italic; font-weight: 700; color: #d9c9a3; }
-  .fairway p { max-width: 58ch; color: #e8dfcc; margin-bottom: 24px; }
-  .fw-teasers { list-style: none; border-top: 1px solid rgba(244,237,224,0.35); margin-bottom: 30px; max-width: 620px; }
-  .fw-teasers li {
-    display: flex; justify-content: space-between; align-items: baseline; gap: 16px;
-    padding: 14px 0; border-bottom: 1px solid rgba(244,237,224,0.35);
-  }
-  .fw-title { font-family: var(--display); font-weight: 700; font-size: 22px; }
-  .fw-verdict {
-    font-family: var(--mono); font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase;
-    color: #d9c9a3; border: 1px solid #d9c9a3; padding: 4px 9px; white-space: nowrap;
-  }
-  .fw-cta {
-    display: inline-block; font-family: var(--mono); font-size: 11px; letter-spacing: 0.3em;
-    text-transform: uppercase; color: #1f3a2e; background: var(--paper);
-    padding: 14px 22px; text-decoration: none; transition: background 0.3s;
-  }
-  .fw-cta:hover, .fw-cta:focus-visible { background: #d9c9a3; }
-  @media (max-width: 760px) {
-    .fairway-grid { grid-template-columns: 1fr; gap: 24px; }
-    .fw-title { font-size: 19px; }
-  }
   @keyframes rise {
     from { opacity: 0; transform: translateY(18px); }
     to   { opacity: 1; transform: translateY(0); }
@@ -431,6 +397,14 @@
   .crime:nth-child(5) { animation-delay: 0.25s; }
   .crime:nth-child(6) { animation-delay: 0.30s; }
 
+  /* ─── GOLF ADDITIONS ───────────────────── */
+  .specimen-frame img {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: cover; display: block; z-index: 1;
+  }
+  a.back { color: inherit; text-decoration: none; border-bottom: 1px solid currentColor; }
+  a.back:hover { color: var(--oxblood); }
+
   /* ─── SECTION NAV (shared) ────────────────────────── */
   .sitenav {
     display: flex; justify-content: center; flex-wrap: wrap; gap: 8px 40px;
@@ -440,62 +414,6 @@
   .sitenav a { color: var(--ink-soft); text-decoration: none; padding-bottom: 3px; border-bottom: 1px solid transparent; }
   .sitenav a:hover, .sitenav a:focus-visible { color: var(--oxblood); border-color: currentColor; }
   .sitenav a[aria-current="page"] { color: var(--oxblood); border-color: var(--oxblood); }
-
-  /* ─── COVER: TWO SECTIONS ─────────────────────────── */
-  .sections {
-    display: grid; grid-template-columns: 1fr 1fr;
-    border: 1px solid var(--rule); margin: 56px 0 0;
-  }
-  .panel { padding: 48px 40px 44px; display: flex; flex-direction: column; }
-  .panel.town { background: var(--paper-deep); border-right: 1px solid var(--rule); }
-  .panel.course { background: #1f3a2e; color: var(--paper); }
-  .panel .sec-num {
-    font-family: var(--display); font-style: italic; font-weight: 700;
-    font-size: 30px; color: var(--oxblood); line-height: 1;
-  }
-  .panel.course .sec-num, .panel.course .sec-tag { color: #d9c9a3; }
-  .panel .sec-tag {
-    font-family: var(--mono); font-size: 10px; letter-spacing: 0.35em;
-    text-transform: uppercase; color: var(--oxblood); margin: 10px 0 18px;
-  }
-  .panel h2 {
-    font-family: var(--display); font-weight: 900;
-    font-size: clamp(48px, 6vw, 84px); line-height: 0.95; letter-spacing: -0.02em; margin-bottom: 18px;
-  }
-  .panel p { font-size: 18px; line-height: 1.5; color: var(--ink-soft); max-width: 40ch; margin-bottom: 26px; }
-  .panel.course p { color: #e8dfcc; }
-  .contents { list-style: none; border-top: 1px solid rgba(42,36,29,0.35); margin-bottom: 32px; }
-  .panel.course .contents { border-color: rgba(244,237,224,0.35); }
-  .contents li {
-    display: flex; justify-content: space-between; align-items: baseline; gap: 14px;
-    padding: 12px 0; border-bottom: 1px solid rgba(42,36,29,0.35);
-  }
-  .panel.course .contents li { border-color: rgba(244,237,224,0.35); }
-  .contents .t { font-family: var(--display); font-weight: 700; font-size: 19px; line-height: 1.2; }
-  .contents .v {
-    font-family: var(--mono); font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase;
-    color: var(--oxblood); white-space: nowrap;
-  }
-  .panel.course .contents .v { color: #d9c9a3; }
-  .enter {
-    margin-top: auto; align-self: flex-start;
-    font-family: var(--mono); font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase;
-    text-decoration: none; padding: 14px 22px; transition: background 0.3s, color 0.3s;
-  }
-  .panel.town .enter { background: var(--ink); color: var(--paper); }
-  .panel.town .enter:hover, .panel.town .enter:focus-visible { background: var(--oxblood); }
-  .panel.course .enter { background: var(--paper); color: #1f3a2e; }
-  .panel.course .enter:hover, .panel.course .enter:focus-visible { background: #d9c9a3; }
-  .cover-note {
-    text-align: center; padding: 56px 0 10px; max-width: 640px; margin: 0 auto;
-    font-style: italic; color: var(--ink-soft); font-size: 20px; line-height: 1.5;
-  }
-  .cover-note em { color: var(--oxblood); }
-  @media (max-width: 760px) {
-    .sections { grid-template-columns: 1fr; }
-    .panel { padding: 36px 24px; }
-    .panel.town { border-right: 0; border-bottom: 1px solid var(--rule); }
-  }
 </style>
 </head>
 <body>
@@ -507,58 +425,206 @@
       <span>Est. MMXXVI</span>
     </div>
     <div class="right">
-      <span>A Gazette of Town &amp; Course</span>
+      <span>A Golf Gazette</span>
       <span>Coburg · Germany</span>
     </div>
   </header>
-  <nav class="sitenav" aria-label="Sections">
-    <a href="./" aria-current="page">Front Page</a>
-    <a href="menswear.html">Menswear</a>
-    <a href="golf.html">Golf</a>
-  </nav>
 
   <section class="hero">
-    <div class="kicker">A Field Guide for the Gentleman over Fifty</div>
+    <div class="kicker">A Golf Gazette for the Gentleman over Fifty</div>
     <h1>Dressed,<br><span class="amp">&amp;</span> Not Equipped</h1>
-    <p class="deck">The café is not a fucking base camp. The green is not a survey site. Two sections, one complaint: you are dressed for an expedition that is not happening.</p>
-    <div class="byline">By <em>Craig Kinnell</em></div>
+    <p class="deck">For the golfer over fifty who has noticed that a five-metre putt does not require a laser, a polo does not require ventilation zones, and one glove is not an outfit. Eighteen holes, no excuses.</p>
+    <div class="byline">By <em>Craig Kinnell</em>, who plays</div>
+    <svg class="ornament" viewBox="0 0 80 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 8 H30" stroke="currentColor" stroke-width="1"/>
+      <circle cx="40" cy="8" r="3" fill="currentColor"/>
+      <path d="M50 8 H80" stroke="currentColor" stroke-width="1"/>
+    </svg>
+  </section>
+</div>
+
+<div class="strip">
+  <span>No Rangefinder Inside Ten Metres</span>
+  <span class="dot">◆</span>
+  <span>One Logo, Maximum</span>
+  <span class="dot">◆</span>
+  <span>Hem Touches The Shoe</span>
+  <span class="dot">◆</span>
+  <span>Sun Cream On Both Hands</span>
+</div>
+
+<div class="container">
+
+  <section class="manifesto">
+    <div class="manifesto-grid">
+      <div><span class="section-label">The Confession<span class="num">I.</span></span></div>
+      <div>
+        <h2>The editor has been <em>away.</em> He was on the course.</h2>
+        <p class="lede">A man who writes a gazette against technical clothing should not, in fairness, spend an entire summer in a sport that has turned technical clothing into a religion. He did. This gazette is the field report, filed from the inside, with the guilt of a participant.</p>
+        <p>Golf is the last refuge of the equipped man. Nowhere else will a grown adult wear a moisture-wicking polo to walk six kilometres at the pace of a museum visit, carry a laser to measure a putt, and apply sun cream to precisely one hand. The game is beautiful. What happens around it needs a word.</p>
+        <p>Nothing below is aimed at anyone in particular. Everything below is aimed at most of us.</p>
+      </div>
+    </div>
   </section>
 
-  <div class="sections">
-    <section class="panel town" aria-labelledby="town-h">
-      <span class="sec-num">I.</span>
-      <span class="sec-tag">In Town</span>
-      <h2 id="town-h">Menswear</h2>
-      <p>Against the softshell in the trattoria, the trail shoe at dinner and the 32-litre rucksack on the school run. Plus the brands worth your money instead.</p>
-      <ul class="contents">
-        <li><span class="t">The Six Crimes</span><span class="v">Indefensible</span></li>
-        <li><span class="t">Four Truths Before You Spend</span><span class="v">Principles</span></li>
-        <li><span class="t">The Remedies</span><span class="v">45 brands</span></li>
-      </ul>
-      <a class="enter" href="menswear.html">Enter Menswear</a>
-    </section>
+  <section class="crimes">
+    <div class="crimes-header">
+      <span class="section-label" style="display:inline-block;text-align:left;">Part Two</span>
+      <h2>The <em>Course</em> Crimes</h2>
+      <p class="sub">Offences observed between the first tee and the nineteenth hole, April to October.</p>
+    </div>
 
-    <section class="panel course" aria-labelledby="course-h">
-      <span class="sec-num">II.</span>
-      <span class="sec-tag">On the Course</span>
-      <h2 id="course-h">Golf</h2>
-      <p>Filed from the inside by an editor with one tanned hand. Lasers on the green, logo audits, and dress codes that ban jeans but welcome whale-print trousers.</p>
-      <ul class="contents">
-        <li><span class="t">The Five-Metre Survey</span><span class="v">Aggravated</span></li>
-        <li><span class="t">The One-Glove Problem</span><span class="v">Chronic</span></li>
-        <li><span class="t">Four Rules for the Course</span><span class="v">Dressed instead</span></li>
-      </ul>
-      <a class="enter" href="golf.html">Enter Golf</a>
-    </section>
+    <div class="crimes-list">
+      <article class="crime">
+        <div class="num">№ 01</div>
+        <h3>The Five-Metre Survey</h3>
+        <p>Green 7. A €400 laser rangefinder leaves its magnetic holster to measure a putt he could cover by lying down twice. Slope mode on. Target locked. The target is a hole. It is not going anywhere. "Five point two," he announces. He three-putts.</p>
+        <span class="verdict">Verdict — Aggravated</span>
+      </article>
+      <article class="crime">
+        <div class="num">№ 02</div>
+        <h3>The One-Glove Problem</h3>
+        <p>The only garment in menswear deliberately sold as half a pair. One hand gets the Mediterranean. The other spends six months in leather and emerges each October like a hand in witness protection. The dermatologist asks if it is spreading. Only between April and October.</p>
+        <span class="verdict">Verdict — Chronic</span>
+      </article>
+      <article class="crime">
+        <div class="num">№ 03</div>
+        <h3>Performance Fabric For A Man Who Walks</h3>
+        <p>Four-way stretch. Moisture management. UV protection factor fifty. Ventilation zones mapped to the body's heat signature. Deployed to stroll six kilometres and sit in a cart for most of them. The polo is training for a marathon. The man is training for lunch.</p>
+        <span class="verdict">Verdict — Overruled</span>
+      </article>
+      <article class="crime">
+        <div class="num">№ 04</div>
+        <h3>Clubhouse Camouflage</h3>
+        <p>Quarter-zip, half-zip, soft-shell gilet over the quarter-zip. Every man in the bar dressed as a pharmaceutical representative on the second day of a team-building retreat. You cannot tell the members from the sales conference. Neither can they.</p>
+        <span class="verdict">Verdict — Indistinguishable</span>
+      </article>
+      <article class="crime">
+        <div class="num">№ 05</div>
+        <h3>The Logo Audit</h3>
+        <p>Cap, polo, belt, glove, shoes, bag, umbrella, head covers. Count them. The record at our club stands at eleven separate brands on one man, two of them competitors. He is not a golfer. He is a hoarding at a motorway services.</p>
+        <span class="verdict">Verdict — Egregious</span>
+      </article>
+      <article class="crime">
+        <div class="num">№ 06</div>
+        <h3>Dress Code Versus Dressed</h3>
+        <p>No denim. No collarless shirts. No trainers in the clubhouse. Pink trousers printed with tiny whales: permitted. Plaid in four colours that do not occur in nature: encouraged. The rules were written to keep standards up. They kept the jeans out and let everything else in.</p>
+        <span class="verdict">Verdict — Contempt</span>
+      </article>
+    </div>
+  </section>
+
+  <section class="specimens">
+    <div class="specimens-header">
+      <div><span class="section-label">Field Specimens<span class="num">II½.</span></span></div>
+      <div>
+        <h2>The <em>evidence,</em> from the eighteenth green.</h2>
+        <p>Reconstructions, not photographs of real members. Any resemblance to the man in your four-ball is regrettable and probably accurate.</p>
+      </div>
+    </div>
+    <div class="specimens-grid">
+      <figure class="specimen">
+        <div class="specimen-frame">
+          <div class="specimen-placeholder">
+            <span class="ph-label">Specimen G</span>
+            <span class="ph-detail">A laser, a flag, five metres</span>
+          </div>
+          <img src="images/five-metre-survey.jpg" alt="A golfer aiming a laser rangefinder at a flag only a few metres away" loading="lazy" onerror="this.remove()">
+        </div>
+        <figcaption><span class="caption-num">G.</span> The Five-Metre Survey, green 7.</figcaption>
+      </figure>
+      <figure class="specimen">
+        <div class="specimen-frame">
+          <div class="specimen-placeholder">
+            <span class="ph-label">Specimen H</span>
+            <span class="ph-detail">Is it spreading?</span>
+          </div>
+          <img src="images/one-glove-problem.jpg" alt="A dermatologist examining a golfer's pale gloved hand with a sharp tan line at the wrist" loading="lazy" onerror="this.remove()">
+        </div>
+        <figcaption><span class="caption-num">H.</span> The One-Glove Problem, under examination.</figcaption>
+      </figure>
+      <figure class="specimen">
+        <div class="specimen-frame">
+          <div class="specimen-placeholder">
+            <span class="ph-label">Specimen I</span>
+            <span class="ph-detail">Eleven logos, one man</span>
+          </div>
+        </div>
+        <figcaption><span class="caption-num">I.</span> The Logo Audit, full count.</figcaption>
+      </figure>
+    </div>
+    <p class="specimens-note">— Submit your own glove line. Hands only. <em>Schicke nichts, was du nicht sehen willst.</em></p>
+  </section>
+
+</div>
+
+<section class="pullquote">
+  <div class="container">
+    <blockquote>The equipment knew exactly where the hole was. The man still has <em>no idea.</em></blockquote>
+    <cite>— Overheard, Green 7</cite>
   </div>
+</section>
 
-  <p class="cover-note">Written from Coburg by a man who owns a rangefinder and is not proud. <em>Submissions and properly composed letters welcome.</em></p>
+<div class="container">
 
+  <section class="principles">
+    <div class="principles-header">
+      <div><span class="section-label">Dressed Instead<span class="num">III.</span></span></div>
+      <div><h2>Four <em>rules</em> for the course.</h2></div>
+    </div>
+    <div class="principles-grid">
+      <div class="principle">
+        <div class="num">i.</div>
+        <h3>A plain polo, in navy.</h3>
+        <p>No mesh panels, no thermoregulation zones, no chest logo the size of a beer mat. A collar that stays flat. It should work at the bar afterwards without anyone asking how your round went.</p>
+      </div>
+      <div class="principle">
+        <div class="num">ii.</div>
+        <h3>Trousers that fit.</h3>
+        <p>Slim, plain-front, grey or stone. The hem just touches the shoe. Then €15 at a tailor, which beats any stretch technology yet invented.</p>
+      </div>
+      <div class="principle">
+        <div class="num">iii.</div>
+        <h3>One belt. Leather. Brown.</h3>
+        <p>No ratchet mechanism. No holster for your equipment. A belt holds up trousers. That is the entire job description.</p>
+      </div>
+      <div class="principle">
+        <div class="num">iv.</div>
+        <h3>Use your eyes on the green.</h3>
+        <p>Keep the rangefinder for the 160-metre approach. Inside ten metres, look at the hole. Your eyes came free, and they have slope mode.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ REMEDIES FOR THE COURSE ═══
+       Add brand links here in the same format as the Remedies on index.html.
+       If any become affiliate links: add rel="sponsored noopener", mark them
+       with *, and remove the `hidden` attribute from the disclosure block below. -->
+
+</div>
+
+<section class="editors-note">
+  <div class="container">
+    <div class="label">A Note From The Editor</div>
+    <h2>I own a rangefinder. I am not proud.</h2>
+    <p>In the interest of full disclosure: I carry one. I have used it on a green. I have a glove line that would interest a dermatologist, and at least one polo with a ventilation zone. This gazette is not written from the moral high ground. It is written from the left rough.</p>
+    <p>The season is ending in Franconia. The clubs are going into the cellar. If you spend the winter doing one thing, take your golf trousers to a tailor. Come April, you will look like a man who plays golf, rather than a man who has been issued it.</p>
+    <div class="signature">
+      <span class="name">Craig Kinnell</span>
+      <span class="role">Editor &amp; Sole Correspondent, Handicap Undisclosed</span>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <aside class="disclosure" id="disclosure" hidden>
+    <span class="tag">Werbung · Disclosure</span>
+    <p>Some links on this page are <em>affiliate links / Provisionslinks</em>, marked with an asterisk. If you click through and buy, the gazette receives a small commission at no cost to you. This does not influence what is recommended.</p>
+  </aside>
   <footer>
     <div class="ornament">◆ ◆ ◆</div>
-    <p>Dressed, Not Equipped — Vol. I</p>
-    <p>Set in Playfair, Cormorant &amp; DM Mono</p>
-    <p class="small">No fleece was harmed in the making of this gazette.<br>Coburg, Germany. MMXXVI. All rights, such as they are, reserved.</p>
+    <p>Dressed, Not Equipped — A Golf Gazette</p>
+    <p class="small">No caddie was harmed in the making of this gazette.<br>Coburg, Germany. MMXXVI. All rights, such as they are, reserved.</p>
   </footer>
 </div>
 
